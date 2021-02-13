@@ -26,7 +26,7 @@
     local -a zssh_ids
     zstyle -a ':zim:ssh' ids 'zssh_ids'
     if (( ${#zssh_ids} )); then
-      ssh-add ${HOME}/.ssh/${^zssh_ids} 2>/dev/null
+      ssh-add -K ${HOME}/.ssh/${^zssh_ids} 2>/dev/null
     else
       ssh-add 2>/dev/null
     fi
